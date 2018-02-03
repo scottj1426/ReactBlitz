@@ -12,18 +12,20 @@
     <script src="node_modules/react-dom/dist/react-dom.js"></script>
     <script>
     
-        const MyTittle = function (){
+    
+
+        const MyTittle = function (props){
             return (
                 React.createElement('div', null ,
-                React.createElement('h1', null, 'My second Component')
+                React.createElement('h1', {style: { color: props.color } }, props.tittle)
                 )
             )
         }
         const MyFirstComponent = function () {
-            return (React.createElement('div', null, 
-            React.createElement(MyTittle),
-            React.createElement(MyTittle),
-            React.createElement(MyTittle),
+            return (React.createElement('div', {id: 'my-first-component'}, 
+            React.createElement(MyTittle, {tittle: 'Motocross', color: 'YellowGreen'}),
+            React.createElement(MyTittle, {tittle: 'Supercross', color: 'GreenYellow'}),
+            React.createElement(MyTittle, {tittle: 'MonsterCup', color: 'LimeGreen'}),
             
             
             )
